@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @journal.user %>
-</p>
+<!--<p>-->
+  <!--<strong>User:</strong>-->
+  <!--<%= @journal.user %>-->
+<!--</p>-->
 
-<p>
-  <strong>Title:</strong>
+<h2>
+  <strong>Trip:</strong>
   <%= @journal.title %>
-</p>
+</h2>
 
 <p>
   <strong>Content:</strong>
@@ -30,7 +30,7 @@
 
 
 
-<h2>Entries</h2>
+<h2>Journal Entries</h2>
 <% if @journal.entries.length > 0 %>
     <% @journal.entries.each do |entry| %>
         <p>
@@ -39,12 +39,17 @@
         </p>
 
         <p>
+          <b>Image:</b>
+          <%= entry.image %>
+        </p>
+
+        <p>
           <b>Entry:</b>
           <%= entry.body %>
         </p>
     <% end %>
 <% else %>
-    <h3>No entries have been posted yet.</h3>
+    <h3>No entries are posted for this journal.</h3>
 <% end %>
 
 
@@ -52,8 +57,8 @@
 <h2>Add an Entry:</h2>
 <%= form_for([@journal, @journal.entries.build]) do |f| %>
     <div class="field">
-      <%= f.label :author %><br />
-      <%= f.text_field :author %>
+      <%= f.label :image %><br />
+      <%= f.text_field :image %>
     </div>
     <div class="field">
       <%= f.label :body %><br />
