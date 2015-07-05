@@ -11,10 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150703041040) do
+ActiveRecord::Schema.define(version: 20150705170503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "entries", force: :cascade do |t|
+    t.string   "author"
+    t.text     "body"
+    t.string   "title"
+    t.string   "image"
+    t.string   "location"
+    t.integer  "journal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "entries", ["journal_id"], name: "index_entries_on_journal_id", using: :btree
+
+  create_table "journals", force: :cascade do |t|
+    t.string   "user"
+    t.string   "title"
+    t.text     "content"
+    t.string   "image"
+    t.integer  "rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",   null: false
@@ -33,4 +57,5 @@ ActiveRecord::Schema.define(version: 20150703041040) do
   add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
+  add_foreign_key "entries", "journals"
 end
