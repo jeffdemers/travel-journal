@@ -1,13 +1,14 @@
 <nav class="navbar navbar-inverse">
   <div class="container">
     <div class="navbar-header">
-      <%= link_to 'Travel Check', root_path, class: 'navbar-brand' %>
+      <%= link_to 'Travel Journal', root_path, class: 'navbar-brand' %>
     </div>
     <div id="navbar">
       <% if current_user %>
           <ul class="nav navbar-nav pull-right">
+            <li><%= link_to 'Your Travel Journals', journals_path%></li>
             <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
-            <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+            <li><%= link_to 'Sign Out', logout_path, method: :delete %></li>
           </ul>
       <% else %>
           <ul class="nav navbar-nav pull-right">
