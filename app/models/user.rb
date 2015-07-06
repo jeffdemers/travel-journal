@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :journals
 
   def self.from_omniauth(auth_hash)
 
@@ -11,5 +12,6 @@ class User < ActiveRecord::Base
     user.secret = auth_hash['credentials']['secret']
     user.save!
     user
+
   end
 end

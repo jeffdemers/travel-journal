@@ -16,7 +16,7 @@ class JournalsController < ApplicationController
 
   # GET /journals/new
   def new
-    @journal = Journal.new
+    @journal = current_user.journals.build
   end
 
   # GET /journals/1/edit
@@ -26,7 +26,7 @@ class JournalsController < ApplicationController
   # POST /journals
   # POST /journals.json
   def create
-    @journal = Journal.new(journal_params)
+    @journal = current_user.journals.build(journal_params)
 
     respond_to do |format|
       if @journal.save
