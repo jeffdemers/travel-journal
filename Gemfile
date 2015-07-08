@@ -34,6 +34,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'paperclip', '~> 4.3.0'
 
+gem 'carrierwave', '~> 0.10.0'
+gem 'rmagick', '~> 2.15.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

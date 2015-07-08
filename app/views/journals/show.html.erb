@@ -17,7 +17,8 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @journal.image %>
+
+<p><%= image_tag @journal.image.url(:thumb).to_s %></p>
 </p>
 
 <p>
