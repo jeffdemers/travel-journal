@@ -16,3 +16,56 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+
+.wrapper {
+  position: relative;
+  width: 100%; /* for IE 6 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-text {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.image-text {
+  position: absolute;
+  top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  font-size: 80px;
+  color: whitesmoke;
+}
+
+body {
+  text-transform: uppercase;
+  font-family: 'Poiret One', cursive;
+
+}
+
+btn.hover {
+  color: white;
+}
+
+a:hover{
+  background-color: transparent;
+  text-decoration: none;
+  color: white;
+}
+
+a.active{
+  color: white;
+}
+
+a.visited {
+  color: white;
+
+}
+
+
+

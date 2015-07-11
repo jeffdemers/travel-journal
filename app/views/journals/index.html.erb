@@ -1,29 +1,35 @@
 <p id="notice"><%= notice %></p>
-
-<h1>My Journals</h1>
-<%= link_to 'New Journal', new_journal_path %>
-
+<div class="jumbotron col-md-6 col-md-offset-3">
+  <div class="row">
+<h2 class="main-my-journal text-center">My Journals</h2>
+</div>
+  </div>
 
     <% @journals.each do |journal| %>
-    <div class="wrapper">
-        <p><%= journal.title %></p>
-        <p><%= journal.content %></p>
-        <p><%= image_tag journal.image.url(:thumb).to_s %></p>
-        <p><%= link_to 'Show', journal %></p>
-        <p><%= link_to 'Edit', edit_journal_path(journal) %></p>
-        <p><%= link_to 'Destroy', journal, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    <br>
-    </div>
+    <div class="row">
+      <div class="col-lg-6 col-sm-offset-3">
+<div class = "wrapper text-center">
+  <%= image_tag journal.image.url(:thumb).to_s %>
+          <h1 class="image-text"><%= link_to journal.title, journal %></h1>
+          <!--<h5 class="image-text"><%= journal.content %></h5>-->
+  <br>
+  <br>
+  <%= link_to 'Edit Your Journal', edit_journal_path(journal), "class" => "btn btn-primary text-center" %>
+  <br>
+  <br>
+  <%= link_to 'Delete this Journal', journal, method: :delete, data: { confirm: 'Are you sure?' }, "class" => "btn btn-primary" %>
+
+</div>
+
+        </div>
+          <br>
+
+
 
     <% end %>
 
 
 
+</div>
 
-<!--<div class="wrapper">-->
-  <!--<img src="http://lorempixel.com/g/400/200/" alt="" />-->
-  <!--<div class="overlay">-->
-    <!--<h2>Image Name</h2>-->
-
-  <!--</div>-->
-<!--</div>-->
+<%= link_to 'New Journal', new_journal_path, "class" => "btn btn-inverse btn-large active" %>
