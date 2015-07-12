@@ -1,41 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<body>
-<div id='location'>
-  Nearby points of interest!
-</div>
-<div id='map-canvas'>
-  Google Map loading...
-</div>
-</body>
-
-
-<div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
+<div class="container">
+  <div class="row">
+  <div class="col-md-6 col-md-offset-1">
 <h2>
-  <strong>Trip:</strong>
+  <strong>Journal:</strong>
   <%= @journal.title %>
 </h2>
 
-<p>
-  <strong>Content:</strong>
-  <%= @journal.content %>
-</p>
+<!--<p><strong>Content:</strong>-->
+  <!--<%= @journal.content %>-->
+<!--</p>-->
 
-<p>
-  <strong>Image:</strong>
+
 
 <p><%= image_tag @journal.image.url(:thumb).to_s %></p>
 </p>
 
-<p>
   <strong>User Name:</strong>
   <%= @journal.user.name %>
 </p>
 
-<%= link_to 'Edit', edit_journal_path(@journal) %> |
+<%= link_to 'Edit', edit_journal_path(@journal), "class" => "btn btn-primary text-center" %>
 <%= link_to 'Back', journals_path %>
-
 
 
 <h2>Journal Entries</h2>
@@ -47,13 +32,9 @@
         </p>
 
         <p>
-          <b>Image:</b>
-          <%= entry.image %>
-        </p>
-
-        <p>
           <b>Entry:</b>
           <%= entry.body %>
+          <%= image_tag entry.image_url(:thumb).to_s %>
         </p>
     <% end %>
 <% else %>
@@ -64,7 +45,7 @@
 <%= form_for([@journal, @journal.entries.build]) do |f| %>
     <div class="field">
       <%= f.label :image %><br />
-      <%= f.text_field :image %>
+      <%= f.file_field :image %>
     </div>
     <div class="field">
       <%= f.label :body %><br />
@@ -74,12 +55,26 @@
       <%= f.submit %>
     </div>
 <% end %>
-
-      </div>
+    </div>
+    <div class="col-md-4">
+    <div id='location'>
+      Nearby points of interest!
+    </div>
+    <div id='map-canvas'>
+      Google Map loading...
     </div>
 
+      </div>
+  </div>
+  </div>
 
 
+
+
+
+
+
+//google map
 
 <html>
 <head>
@@ -87,21 +82,12 @@
   <title>Where am I?</title>
   <script type='text/javascript'
           src='https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places,weather'></script>
-  <script src='myLoc.js'></script>
   <style type='text/css'>
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 300px; }
+      #map-canvas { height: 900px; width: 400px  }
   </style>
 </head>
-<body>
-<div id='location'>
-  Your location will go here.
-</div>
-<div id='map-canvas'>
-  Google Map will go here!.
-</div>
-</body>
 </html>
 
 <script>
@@ -130,9 +116,9 @@
         addNearByPlaces(latLng);
         createMarker(latLng);
 
-        //Also setting the latitude and longitude values in another div.
-        var div = document.getElementById('location');
-        div.innerHTML = 'You are at Latitude: ' + latitude + ', Longitude: ' + longitude;
+//        //Also setting the latitude and longitude values in another div.
+//        var div = document.getElementById('location');
+//        div.innerHTML = 'You are at Latitude: ' + latitude + ', Longitude: ' + longitude;
     }
 
     function showMap(latLng) {
@@ -154,7 +140,7 @@
         var request = {
             location: latLng,
             radius: 2000,
-            types: ['food', 'bakery', 'cafe', 'museum', 'meal_delivery','restaurant', 'meal_takeaway', 'shopping_mall']
+            types: ['food', 'bakery', 'cafe', 'museum','restaurant']
         };
 
         nearByService.nearbySearch(request, handleNearBySearchResults);

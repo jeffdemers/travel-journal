@@ -11,10 +11,11 @@
 <div class = "wrapper text-center">
   <%= image_tag journal.image.url(:thumb).to_s %>
           <h1 class="image-text"><%= link_to journal.title, journal %></h1>
-          <!--<h5 class="image-text"><%= journal.content %></h5>-->
   <br>
   <br>
-  <%= link_to 'Edit Your Journal', edit_journal_path(journal), "class" => "btn btn-primary text-center" %>
+  <h5 class="image-text2"><%= link_to journal.user.name, journal %></h5>
+
+
   <br>
   <br>
   <%= link_to 'Delete this Journal', journal, method: :delete, data: { confirm: 'Are you sure?' }, "class" => "btn btn-primary" %>
