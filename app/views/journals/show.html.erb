@@ -6,11 +6,6 @@
   <%= @journal.title %>
 </h2>
 
-<!--<p><strong>Content:</strong>-->
-  <!--<%= @journal.content %>-->
-<!--</p>-->
-
-
 
 <p><%= image_tag @journal.image.url(:thumb).to_s %></p>
 </p>
@@ -19,7 +14,11 @@
   <%= @journal.user.name %>
 </p>
 
-<%= link_to 'Edit', edit_journal_path(@journal), "class" => "btn btn-primary text-center" %>
+
+    <!--<%= link_to 'Delete this Journal', @journal, method: :delete, data: { confirm: 'Are you sure?' }, "class" => "btn btn-primary" %>-->
+
+
+    <%= link_to 'Edit', edit_journal_path(@journal), "class" => "btn btn-primary text-center" %>
 <%= link_to 'Back', journals_path %>
 
 
@@ -36,6 +35,7 @@
           <%= entry.body %>
           <%= image_tag entry.image_url(:thumb).to_s %>
         </p>
+
     <% end %>
 <% else %>
     <h5>No entries have been posted for this journal.</h5>

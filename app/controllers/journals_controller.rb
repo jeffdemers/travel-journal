@@ -12,6 +12,7 @@ class JournalsController < ApplicationController
   # GET /journals/1
   # GET /journals/1.json
   def show
+
   end
 
   # GET /journals/new
