@@ -12,7 +12,7 @@ class JournalsController < ApplicationController
   # GET /journals/1
   # GET /journals/1.json
   def show
-
+    @journals = Journal.all
   end
 
   # GET /journals/new

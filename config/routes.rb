@@ -12,6 +12,6 @@ Rails.application.routes.draw do
     resources :entries
   end
 
-
+get 'pages/map', to: 'pages#map', as: :map
 
 end

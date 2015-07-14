@@ -49,6 +49,17 @@
   color: whitesmoke;
 }
 
+.image-text3 {
+  position: absolute;
+  top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  font-size: 30px;
+  display: block;
+  color: whitesmoke;
+
+}
 
 
 
@@ -78,6 +89,44 @@ a.active{
 a.visited {
   color: white;
 
+}
+
+#intro {
+  background: url(https://download.unsplash.com/photo-1429547584745-d8bec594c82e) 50% 0 fixed;
+  background-size: 1300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+  padding: 100px 0px;
+}
+#home {
+  background: url(https://download.unsplash.com/photo-1429152937938-07b5f2828cdd) 50% 0 fixed;
+  background-size: 1300px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+  padding: 200px 0;
+}
+#about {
+  background: url(https://download.unsplash.com/photo-1429547584745-d8bec594c82e) 50% 0 fixed;
+  background-size: 1300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+  padding: 100px 0;
+  color: #fff;
 }
 
 

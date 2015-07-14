@@ -1,43 +1,102 @@
+
+<!-- Section 1 -->
+<section id="intro" data-speed="6" data-type="background">
+  <div class="container">
+    <h1 class="main-title text-center">Save and share your travels</h1>
+
+      <% if current_user %>
+
+            <%= link_to 'Your Travel Journals', journals_path, "class" => "btn btn-primary" %></li>
+
+      <% else %>
+            <%= link_to 'Login to begin', '/auth/twitter', "class" => "btn btn-primary" %>
+
+      <% end %>
+
+    </div>
+
+
+  </div>
+</section>
 <% if current_user %>
     <div class="container">
-    <div class="page-header">
-      <h1 >Here is some info about you...</h1>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <ul>
-          <li><strong>Name:</strong> <%= current_user.name %></li>
-          <li><strong>Provider:</strong> <%= current_user.provider %></li>
-          <li><strong>uID:</strong> <%= current_user.uid %></li>
-          <li><strong>Location:</strong> <%= current_user.location %></li>
-          <li><strong>Avatar URL:</strong> <%= current_user.image_url %></li>
-          <li><strong>URL:</strong> <%= current_user.url %></li>
-        </ul>
+      <div class="page-header">
+        <h1 >Here is some info about you...</h1>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <ul>
+            <li><strong>Name:</strong> <%= current_user.name %></li>
+            <li><strong>Provider:</strong> <%= current_user.provider %></li>
+            <li><strong>uID:</strong> <%= current_user.uid %></li>
+            <li><strong>Location:</strong> <%= current_user.location %></li>
+            <li><strong>Avatar URL:</strong> <%= current_user.image_url %></li>
+            <li><strong>URL:</strong> <%= current_user.url %></li>
+          </ul>
+        </div>
       </div>
     </div>
+<% else %>
+    <%= render 'welcome' %>
+<% end %>
+<!-- Section 2 -->
+<section id="home" data-speed="4" data-type="background">
+  <div class="container">
+
+
+    </div>
+  </div>
+</section>
+
+<!-- Section 3 -->
+<section id="about" data-speed="2" data-type="background">
+  <div class="container">
+    This is the final section!
+  </div>
+</section>
+<% if current_user %>
+    <div class="container">
+      <div class="page-header">
+        <h1 >Here is some info about you...</h1>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <ul>
+            <li><strong>Name:</strong> <%= current_user.name %></li>
+            <li><strong>Provider:</strong> <%= current_user.provider %></li>
+            <li><strong>uID:</strong> <%= current_user.uid %></li>
+            <li><strong>Location:</strong> <%= current_user.location %></li>
+            <li><strong>Avatar URL:</strong> <%= current_user.image_url %></li>
+            <li><strong>URL:</strong> <%= current_user.url %></li>
+          </ul>
+        </div>
+      </div>
     </div>
 <% else %>
     <%= render 'welcome' %>
 <% end %>
 
+<script>
 
-<% @journals.each do |journal| %>
-    <div class="row">
-      <div class="col-lg-8 col-sm-offset-1">
-        <div class = "wrapper text-center">
-          <%= image_tag journal.image.url(:thumb).to_s %>
-          <h1 class="image-text"><%= link_to journal.title, journal %></h1>
-          <br>
-          <br>
-          <h5 class="image-text2"><%= link_to journal.user.name, journal %></h5>
+    $(document).ready(function(){
+        // cache the window object
+        $window = $(window);
 
-        </div>
+        $('section[data-type="background"]').each(function(){
+            // declare the variable to affect the defined data-type
+            var $scroll = $(this);
 
-      </div>
+            $(window).scroll(function() {
+                // HTML5 proves useful for helping with creating JS functions!
+                // also, negative value because we're scrolling upwards
+                var yPos = -($window.scrollTop() / $scroll.data('speed'));
 
+                // background position
+                var coords = '50% '+ yPos + 'px';
 
-
-
-<% end %>
-
-</div>
+                // move the background
+                $scroll.css({ backgroundPosition: coords });
+            }); // end window scroll
+        });  // end section function
+    }); // close out script
+</script>
