@@ -1,22 +1,17 @@
-
 <!-- Section 1 -->
 <section id="intro" data-speed="6" data-type="background">
-  <div class="container">
-    <h1 class="main-title text-center">Save and share your travels</h1>
+  <div class="container text-center">
+    <h1 class="main-title">Save and share your travels</h1>
+    <h1 class="main-title">with</h1>
+    <h1 class="main-title">Travel Track</h1>
 
       <% if current_user %>
-
-            <%= link_to 'Your Travel Journals', journals_path, "class" => "btn btn-primary" %></li>
-
+            <%= link_to 'Your Travel Journals', journals_path, "class" => "btn btn-primary title-button" %></li>
       <% else %>
-            <%= link_to 'Login to begin', '/auth/twitter', "class" => "btn btn-primary" %>
-
+            <%= link_to 'Login to begin', '/auth/twitter', "class" => "btn btn-primary title-button" %>
       <% end %>
-
-    </div>
-
-
   </div>
+
 </section>
 <% if current_user %>
     <div class="container">
@@ -48,33 +43,25 @@
   </div>
 </section>
 
+
+
 <!-- Section 3 -->
 <section id="about" data-speed="2" data-type="background">
-  <div class="container">
-    This is the final section!
+  <div class="container-main col-md-12">
+
+    <h1 class="text-center">Discover new journals</h1>
+    <% @journals.each do |journal| %>
+
+        <div class = "wrapper2">
+          <%= image_tag journal.image.url(:small).to_s %>
+
+        </div>
+
+    <% end %>
   </div>
 </section>
-<% if current_user %>
-    <div class="container">
-      <div class="page-header">
-        <h1 >Here is some info about you...</h1>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <ul>
-            <li><strong>Name:</strong> <%= current_user.name %></li>
-            <li><strong>Provider:</strong> <%= current_user.provider %></li>
-            <li><strong>uID:</strong> <%= current_user.uid %></li>
-            <li><strong>Location:</strong> <%= current_user.location %></li>
-            <li><strong>Avatar URL:</strong> <%= current_user.image_url %></li>
-            <li><strong>URL:</strong> <%= current_user.url %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-<% else %>
-    <%= render 'welcome' %>
-<% end %>
+
+
 
 <script>
 
