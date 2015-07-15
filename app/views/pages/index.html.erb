@@ -4,11 +4,12 @@
     <h1 class="main-title">Save and share your travels</h1>
     <h1 class="main-title">with</h1>
     <h1 class="main-title">Travel Track</h1>
-
+    <br>
+    <br>
       <% if current_user %>
-            <%= link_to 'Your Travel Journals', journals_path, "class" => "btn btn-primary title-button" %></li>
+            <%= link_to 'Your Travel Journals', journals_path, "class" => "btn-lg btn-success title-button" %>
       <% else %>
-            <%= link_to 'Login to begin', '/auth/twitter', "class" => "btn btn-primary title-button" %>
+            <%= link_to 'Login to begin', '/auth/twitter', "class" => "btn-lg btn-success title-button" %>
       <% end %>
   </div>
 
@@ -52,10 +53,10 @@
     <h1 class="text-center">Discover new journals</h1>
     <% @journals.each do |journal| %>
 
-        <div class = "wrapper2">
-          <%= image_tag journal.image.url(:small).to_s %>
 
-        </div>
+          <%= image_tag journal.image.url(:small).to_s, "class" => "small-img" %>
+
+
 
     <% end %>
   </div>
@@ -65,25 +66,5 @@
 
 <script>
 
-    $(document).ready(function(){
-        // cache the window object
-        $window = $(window);
 
-        $('section[data-type="background"]').each(function(){
-            // declare the variable to affect the defined data-type
-            var $scroll = $(this);
-
-            $(window).scroll(function() {
-                // HTML5 proves useful for helping with creating JS functions!
-                // also, negative value because we're scrolling upwards
-                var yPos = -($window.scrollTop() / $scroll.data('speed'));
-
-                // background position
-                var coords = '50% '+ yPos + 'px';
-
-                // move the background
-                $scroll.css({ backgroundPosition: coords });
-            }); // end window scroll
-        });  // end section function
-    }); // close out script
 </script>

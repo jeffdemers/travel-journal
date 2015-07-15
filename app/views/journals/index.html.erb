@@ -7,7 +7,7 @@
 
     <% @journals.each do |journal| %>
     <div class="row">
-      <div class="col-lg-6 col-sm-offset-3">
+      <div class="col-lg-10 col-sm-offset-1">
 <div class = "wrapper text-center">
   <%= image_tag journal.image.url(:thumb).to_s %>
   <h1 class="image-text"><%= link_to journal.title, journal %></h1>

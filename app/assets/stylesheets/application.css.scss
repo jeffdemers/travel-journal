@@ -24,6 +24,8 @@
   width: 100%; /* for IE 6 */
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 20px;
+  display: inline-block;
 }
 
 
@@ -80,15 +82,6 @@ body {
 }
 
 
-
-
-
-
-
-btn.hover {
-  color: white;
-}
-
 a:hover{
   background-color: transparent;
   text-decoration: none;
@@ -101,11 +94,10 @@ a.active{
 
 a.visited {
   color: white;
-
 }
 
 #intro {
-  background: url("ocean.jpeg") 50% 0 fixed;
+  background: url(https://download.unsplash.com/photo-1425136738262-212551713a58) 50% 0 fixed;
   background-size: 1300px;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -113,8 +105,10 @@ a.visited {
   margin: 0 auto;
   width: 100%;
   position: relative;
-  padding: 100px 0px;
+  padding: 50px 0px 50px 0px;
 }
+
+
 #home {
   background: url(https://download.unsplash.com/photo-1420819453217-57b6badd9e19) 50% 0 fixed;
   background-size: 1300px;
@@ -142,22 +136,46 @@ a.visited {
 .main-title {
   color: white;
   font-size: 60px;
-  padding-bottom: 0px;
-
-
-
+  padding-top: 0px;
 }
 
-.wrapper2 {
-  display: inline;
-
+.small-img {
+  padding-bottom: 5px;
 }
 
 .navbar {
-
   background-color: gray;
+}
+
+.jumbotron {
+  background-color: darkgray;
+}
+
+.navbar-inverse .navbar-brand {
+  color: whitesmoke;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: whitesmoke;
+  font-family: 'Poiret One', cursive;
+}
+
+.title-button {
+  border-top: 100px;
+  font-size: large;
+}
+
+.footer {
+
+  background-color: darkgray;
+  height: 100px;
 
 }
+
+.title-button {
+  background-color: black;
+}
+
 
 
 
