@@ -36,7 +36,7 @@
     <% @journal.entries.each do |entry| %>
 
         <p>
-          <b class="text-center">Journal Entry for <%= entry.created_at%></b>
+          <b class="text-center">Journal Entry <%= entry.created_at%></b>
           <br>
           <%= entry.body %>
           <%= image_tag entry.image_url(:thumb).to_s %>
@@ -64,7 +64,6 @@
 
 
 
-//google map
 
 <html>
 <head>
@@ -75,7 +74,7 @@
   <style type='text/css'>
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 0 }
-      #map-canvas { height: 900px; width: 400px  }
+      #map-canvas { height: 600px; width: 400px  }
   </style>
 </head>
 </html>
@@ -129,8 +128,8 @@
 
         var request = {
             location: latLng,
-            radius: 2000,
-            types: ['food', 'bakery', 'cafe', 'museum','restaurant']
+            radius: 1000,
+            types: ['food', 'museum','restaurant']
         };
 
         nearByService.nearbySearch(request, handleNearBySearchResults);
