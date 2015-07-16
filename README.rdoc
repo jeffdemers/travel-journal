@@ -14,7 +14,9 @@ The Travel Track site provides a simple and extremely flexible way to journal ab
 
 * Fonts from Google Fonts
 
-* Image hosting Amazon Web Services using the CarrierWave gem
+* Image hosting Amazon Web Services
+
+* Image hosting with CarrierWave gem
 
 * Google Map API
 
