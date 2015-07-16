@@ -12,7 +12,9 @@ class JournalsController < ApplicationController
   # GET /journals/1
   # GET /journals/1.json
   def show
-    @journals = Journal.all
+    @journals = @journal.user
+
+
   end
 
   # GET /journals/new
@@ -28,6 +30,14 @@ class JournalsController < ApplicationController
   # POST /journals.json
   def create
     @journal = current_user.journals.build(journal_params)
+
+    current_user.journals << journal
+    if journal.save
+      redirect_to journals_path(current_user.id)
+    else
+      render :new
+    end
+
 
     respond_to do |format|
       if @journal.save

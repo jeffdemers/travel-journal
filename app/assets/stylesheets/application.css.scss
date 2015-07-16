@@ -153,11 +153,14 @@ a.visited {
 
 .navbar-inverse .navbar-brand {
   color: whitesmoke;
+  padding-top: 25px;
+  font-size: 30px;
 }
 
 .navbar-inverse .navbar-nav > li > a {
   color: whitesmoke;
   font-family: 'Poiret One', cursive;
+
 }
 
 .title-button {
@@ -174,6 +177,25 @@ a.visited {
 
 .title-button {
   background-color: black;
+}
+
+.jumbotron {
+  background-color: darkgray;
+
+}
+
+li {
+  color: white;
+  font-size: 20px;
+  font-family: 'Poiret One', cursive;
+  padding: 10px 0px;
+}
+
+ul
+{
+  list-style-type: none;
+
+
 }
 
 
