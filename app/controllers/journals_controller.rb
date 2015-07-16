@@ -74,6 +74,12 @@ class JournalsController < ApplicationController
     end
   end
 
+  def by_user
+    @user = User.find(params[:id])
+    @journals = Journal.where(user: @user)
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_journal

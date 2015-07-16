@@ -7,7 +7,7 @@
       <% if current_user %>
           <ul class="nav navbar-nav pull-right">
             <li><%= link_to 'New Journal', new_journal_path %></li>
-            <li><%= link_to 'Your Travel Journals', journals_path%></li>
+            <li><%= link_to 'Your Travel Journals', user_account_path(current_user.id)%></li>
             <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
             <li><%= link_to 'Sign Out', logout_path, method: :delete %></li>
           </ul>
