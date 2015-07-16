@@ -1,2 +1,45 @@
-<h1> Maps page</h1>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!--<a class="navbar-brand" href="#">Rocket Shops</a>-->
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to 'Travel Track', root_path, class: 'navbar-brand' %></li>
+          </ul>
 
+    <div id="navbar">
+
+      <% if current_user %>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="inline-overlay-trigger">
+
+            <li><%= link_to 'New Journal', new_journal_path %></li>
+            <li><%= link_to 'Your Travel Journals', user_account_path(current_user.id)%></li>
+            <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
+            <li><%= link_to 'Sign Out', logout_path, method: :delete %></li>
+          </ul>
+      <% else %>
+          <ul class="nav navbar-nav pull-right">
+            <li><%= link_to 'Login with Twitter', '/auth/twitter' %></li>
+          </ul>
+      <% end %>
+    </div>
+  </div>
+  </div>
+</nav>
+<div class="container">
+  <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+  <% end %>
+
+</div><!-- Page Content -->

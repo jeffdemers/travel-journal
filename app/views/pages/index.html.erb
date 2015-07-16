@@ -1,5 +1,4 @@
 <!-- Section 1 -->
-
 <section id="intro" data-speed="6" data-type="background">
   <div class="container text-center">
     <h1 class="main-title">Save and share your travels</h1>
@@ -29,10 +28,7 @@
             <li><strong>Share with anyone -- our responsive website looks great on any device</strong></li>
             <li><strong>Explore the adventures of fellow travel enthusiasts</strong></li>
           </ul>
-
         </div>
-
-
       </div>
     </div>
 <% else %>
@@ -41,26 +37,15 @@
 <!-- Section 2 -->
 <section id="home" data-speed="4" data-type="background">
   <div class="container">
-
-
     </div>
   </div>
 </section>
-
-
 <!-- Section 3 -->
 <section id="about" data-speed="2" data-type="background">
   <div class="container-main col-md-12">
-
     <h1 class="text-center">Discover new journals</h1>
     <% @journals.each do |journal| %>
           <%= image_tag journal.image.url(:small).to_s, "class" => "small-img" %>
     <% end %>
-  </div>
-</section>
-
-<section id="blank">
-  <div class="container-main col-md-12">
-
   </div>
 </section>

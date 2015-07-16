@@ -197,15 +197,22 @@ li {
   color: white;
   font-size: 20px;
   font-family: 'Poiret One', cursive;
-  padding: 10px 0px;
+  padding: 15px 0px;
 }
 
 ul
 {
-  list-style-type: none;
-
+  list-style-type: circle;
 
 }
+
+.navbar-inverse .navbar-brand {
+  color: whitesmoke;
+  padding-top: 18px;
+  font-size: 25px;
+}
+
+
 
 
 
