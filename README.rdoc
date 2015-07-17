@@ -1,6 +1,14 @@
 == Travel Track
 
+Your Travel tracker.
+
+== Goal
+
 The Travel Track site provides a simple and extremely flexible way to journal about your travels.  Adding images, entries and exploring your destination are all easy to do with Travel Track.
+
+== Design
+
+Travel Track is designed to host journals, journal entries and travlers images.  Travel tracker also allows users to explore their destination based on geolocation and Google Places API.
 
 == Architecture
 
@@ -23,3 +31,5 @@ The Travel Track site provides a simple and extremely flexible way to journal ab
 * Geolocation used to determine user location
 
 * Twitter Oauth
+
+
