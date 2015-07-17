@@ -7,8 +7,6 @@
   <br>
   <br>
   <%= link_to 'Edit', edit_journal_path(@journal), "class" => "image-text4 btn btn-primary" %>
-
-
 </div>
 
 <div class="container">
@@ -33,16 +31,13 @@
 
 
 <% if @journal.entries.length > 0 %>
-    <% @journal.entries.each do |entry| %>
+    <% @journal.entries.reverse.each do |entry| %>
 
-        <p>
-          <b class="text-center">Journal Entry <%= entry.created_at%></b>
+        <h3>Journal Entry <%= entry.created_at%></h3>
           <br>
-          <%= entry.body %>
+          <h5><%= entry.body %></h5>
           <%= image_tag entry.image_url(:thumb).to_s %>
         </p>
-
-
     <% end %>
 <% else %>
     <h5>No entries have been posted for this journal.</h5>
