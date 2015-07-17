@@ -1,28 +1,23 @@
-== README
+== Travel Track
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Travel Track site provides a simple and extremely flexible way to journal about your travels.  Adding images, entries and exploring your destination are all easy to do with Travel Track.
 
-Things you may want to cover:
+== Architecture
 
-* Ruby version
+* Hosted on Heroku
 
-* System dependencies
+* Built on Ruby on Rails and jQuery
 
-* Configuration
+* Bootstrap CSS
 
-* Database creation
+* Icons from Font Awesome
 
-* Database initialization
+* Fonts from Google Fonts
 
-* How to run the test suite
+* Image hosting Amazon Web Services
 
-* Services (job queues, cache servers, search engines, etc.)
+* Image hosting with CarrierWave gem
 
-* Deployment instructions
+* Google Map API
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Twitter Oauth
