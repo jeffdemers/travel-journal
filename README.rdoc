@@ -20,4 +20,6 @@ The Travel Track site provides a simple and extremely flexible way to journal ab
 
 * Google Map API
 
+* Geolocation used to determine user location
+
 * Twitter Oauth
