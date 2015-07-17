@@ -33,7 +33,7 @@
 <% if @journal.entries.length > 0 %>
     <% @journal.entries.reverse.each do |entry| %>
 
-        <h3>Journal Entry <%= entry.created_at%></h3>
+        <h3>Journal Entry <%= entry.created_at.to_s.split('')[0..9].join%></h3>
           <br>
           <h5><%= entry.body %></h5>
           <%= image_tag entry.image_url(:thumb).to_s %>
